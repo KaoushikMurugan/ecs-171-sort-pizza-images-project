@@ -16,3 +16,9 @@ We will use the PIL library to resize the images to a standard size of 512x512.
 Then we will use np.array and Image.open() to convert the images to a 2d array of rgb values, and then store them into a pandas dataframe.
 i.e. each image is converted to a 3d array of dimensions [512][512][3]
 
+Team Members
+-Kaoushik Murugan
+-Usha Sa
+-Mansi Agarwal
+-Gerrik Labra
+-Yuwei Wang

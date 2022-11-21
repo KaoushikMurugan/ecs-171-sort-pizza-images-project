@@ -18,7 +18,7 @@ i.e. each image is converted to a 3d array of dimensions [512][512][3]
 
 Team Members
 -Kaoushik Murugan
--Usha Sa
+-Usha Sah
 -Mansi Agarwal
 -Gerrik Labra
 -Yuwei Wang

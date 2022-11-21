@@ -7,11 +7,11 @@ Sort images into pizza and not pizza images. Project for ECS 171
 
 We have two classes: Pizza and Not Pizza. We have 983 images each
 
-We also notice that more than half of the images are of the size 512x512, but the rest are of varying sizes, but all of them are less than 512x512
+We also notice that more than half of the images are of the size 512x512. The rest are of varying sizes, but all of them are less than 512x512
 
 ### What we will do in preprocessing:
 
-We will use the PIL library to stretch the images to a standard size of 512x512.
+We will use the PIL library to resize the images to a standard size of 512x512.
 
 Then we will use np.array and Image.open() to convert the images to a 2d array of rgb values, and then store them into a pandas dataframe.
 i.e. each image is converted to a 3d array of dimensions [512][512][3]

@@ -7,7 +7,7 @@ Sort images into pizza and not pizza images. Project for ECS 171
 
 We have two classes: Pizza and Not Pizza. We have 983 images each
 
-We also notice that more than half of the images are of the size 512x512. The rest are of varying sizes, but all of them are less than 512x512
+We also notice that more than half of the images are of the size 512x512 and the rest of them are less than 512x512
 
 ### What we will do in preprocessing:
 

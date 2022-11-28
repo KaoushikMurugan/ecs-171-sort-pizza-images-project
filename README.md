@@ -22,3 +22,9 @@ Team Members
 -Mansi Agarwal
 -Gerrik Labra
 -Yuwei Wang
+
+### Preprocessing & First Model:
+
+For our preprocessing, we standardized the image sizes to 512x512. We also made a new directory with the resized images. 
+To train our data, we split the data to 80,20. We then used convolution layers, acitivation functions, and made a sequential model. 
+We evaluated the model by using a classification reprt and compared the error values from the training and testing data. 

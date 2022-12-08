@@ -15,11 +15,11 @@ https://www.kaggle.com/datasets/carlosrunner/pizza-not-pizza
 **SVM inspiration:**
 https://www.kaggle.com/code/ashutoshvarma/image-classification-using-svm-92-accuracy/notebook)
 
-![SVM inspo screenshot](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/SVM-inspo-image.png)
+![SVM inspo screenshot](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/3fdaf03c849cca812181faaffc00e98f293f7a19/images/SVM-inspo-image.png)
 
 An idea of what our data was and how SVM identified the data. Each pixel has 3 values, and each image is n by m pixels. We can't visually show that, but the idea is we created a hyperplane that divided the data, and based on where the data fell on that division, and the importance of the convolutions, we could determine whether the image was a pizza. 
 
-![SVM explanation Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/SVM-explanation.png)
+![SVM explanation Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/3fdaf03c849cca812181faaffc00e98f293f7a19/images/SVM-explanation.png)
 
 Source: https://medium.com/@skilltohire/support-vector-machines-4d28a427ebd
 

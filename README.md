@@ -87,7 +87,7 @@ In the future, we plan on making our model more precise by adding more activatio
 
 **Note**: *We are not following the format since it's difficult to distinguish between the ourselves since we all did a little bit of everything*
 
-The first team meeting was to discuss and pick the data we wanted to analyze, and for what purpose. In the second meeting we identified the attributes needed for machine learning, and analyzed our dataset. Gerrik researched and shared resources about the file format in the dataset. Kaoushik and Gerrik were the main model coders, method researchers, and debuggers. Usha and Mansi handled the logistical side of the project, like setting up meetings, helping with the writing, helping with the code, etc. We all equally contributed to the execution os the project and we all gave eachpther feedback throughout the project. 
+The first team meeting was to discuss and pick the data we wanted to analyze, and for what purpose. In the second meeting we identified the attributes needed for machine learning, and analyzed our dataset. Gerrik researched and shared resources about the file format in the dataset. Kaoushik and Gerrik were the main model coders, method researchers, and debuggers. Usha and Mansi handled the logistical side of the project, like setting up meetings, helping with the writing, helping with the code, etc. We all equally contributed to the execution of the project and we all gave eachother feedback throughout the project. 
 
 For the preprocessing and first model deadlines, we brainstormed ideas over a group call where one person shared their coding environment, and everyone else helped the person coding through googling resources, or syntax or brainstorming ideas and suggesting codes implementations. 
 

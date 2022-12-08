@@ -52,9 +52,12 @@ For the final model, we decided to downsize the image size to 128x128 pixels to 
 
 Our basic CNN model got around **99%-100%** accuracy for the **training** set, but about **49%-51%** accuracy for the **testing** set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
 
+![first model classification report](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/first-model-outputs.png)
 ### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/second-model.ipynb)
 
 This model worked better than the first model with a **60%** accuracy with the **testing** set
+
+![second model classification report](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/second-model-cr.png)
 
 ### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/svm-cnn-final.ipynb)
 

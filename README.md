@@ -26,20 +26,20 @@ Source: https://medium.com/@skilltohire/support-vector-machines-4d28a427ebd
 
 ## Methods
 
-### Pre-processing
+### [Pre-processing and Data Exploration](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/ebaa6f7d9f57446dfedbb5ced0320f533e0665f0/data-exploration.ipynb)
 
 This data set contained many images of pizzas and food items that weren’t pizzas. We then had to preprocess our data, and we decided to resize all our images to 512x512 for uniformity.
 
 In the beginning, we had trouble working with imaging data and we weren’t sure how to resize or use images for our classifier. We had to search online a lot, and we found the PIL library to be useful. We also were not able to load images into our jupyter notebooks initially, but after some searching we were able to utilize the OS library and we used that to access and create new modified images directories in our code.
-### Model 1 - Simple Convolution Neural Network
+### [Model 1 - Simple Convolution Neural Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/34bd8bdfdaa629d078f94a834c52ebc06f09d260/first-model.ipynb)
 
 Our first model was a simplistic approach where we trained our preprocessed data on sequential CNN and over a few convolutional layers, to which we got an overfitting model.
 
-### Model 2 - SVM, CNN and Naïve Baye's Classifier
+### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/second-model.ipynb)
 
 Improving on the first model, we ran our training data through SVM(support Vector Machine) with Naive Bayes before feeding into our neural network to tackle the problem of overfitting.
 
-### Model 3 - Final - SVM and Convolution Neutral Network
+### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/svm-cnn-final.ipynb)
 
 For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a SVM to get a partial guess that we could then feed into the neural network after the convolutional layers and flattening
 
@@ -47,15 +47,15 @@ For the final model, we decided to downsize the image size to 128x128 pixels to 
 
 ## Results
 
-### Model 1 - Simple Convolution Neural Network
+### [Model 1 - Simple Convolution Neural Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/34bd8bdfdaa629d078f94a834c52ebc06f09d260/first-model.ipynb)
 
 Our basic CNN model got around **99%-100%** accuracy for the **training** set, but about **49%-51%** accuracy for the **testing** set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
 
-### Model 2 - SVM, CNN and Naïve Baye's Classifier
+### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/second-model.ipynb)
 
 This model worked better than the first model with a **60%** accuracy with the **testing** set
 
-### Model 3 - Final - SVM and Convolution Neutral Network
+### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/svm-cnn-final.ipynb)
 
 This model worked better than the previous two with about **91%** accuracy on the **training** set and **65%-73%** accuracy on the **testing** set.
 

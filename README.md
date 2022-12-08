@@ -40,7 +40,7 @@ Our first model was a simplistic approach where we trained our preprocessed data
 
 Improving on the first model, we ran our training data through **SVM(support Vector Machine) with Naive Bayes** before feeding into our **neural network** to tackle the problem of overfitting.
 
-### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/svm-cnn-final.ipynb)
+### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/svm-cnn-final.ipynb)
 
 For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a **SVM to get a partial guess** that we could then feed into the **neural network** after the convolutional layers and flattening
 
@@ -48,13 +48,14 @@ For the final model, we decided to downsize the image size to 128x128 pixels to 
 
 ## Results
 
-### [Model 1 - Simple Convolution Neural Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/first-model.ipynb)
+### [Model 1 - Simple Convolution Neural Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/34bd8bdfdaa629d078f94a834c52ebc06f09d260/first-model.ipynb)
 
 Our basic CNN model got around **99%-100%** accuracy for the **training** set, but about **49%-51%** accuracy for the **testing** set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
+
 ![SVM inspo screenshot](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/Model-1.png)
 
 ![first model classification report](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/first-model-outputs.png)
-### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/first-model-cr.png)
+### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/second-model.ipynb)
 
 This model worked better than the first model with a **60%** accuracy with the **testing** set
 

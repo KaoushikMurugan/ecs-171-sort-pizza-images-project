@@ -1,48 +1,70 @@
-# Sorting pizza images from food images
-Sort images into pizza and not pizza images. Project for ECS 171
+# Pizza Identifier
 
-Dataset acquired from [Kaggle](https://www.kaggle.com/datasets/carlosrunner/pizza-not-pizza)
+## Introduction
 
-# Data Exploration
-[Link to data-exploration python notebook](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/tree/main/data-exploration.ipynb)
-
-We have two classes: Pizza and Not Pizza. We have 983 images each
-
-We also notice that more than half of the images are of the size 512x512 and the rest of them are less than 512x512
-
-### What we will do in preprocessing
-
-We will use the PIL library to resize the images to a standard size of 512x512.
-
-Then we will use np.array and Image.open() to convert the images to 3 layers of 2d array of rgb values, and then store them into a pandas dataframe.
-i.e. each image is converted to a 3d array of dimensions [512][512][3]
+We first started off with trying to identify different EEG patterns to wave brain classes using Neural Nets, but the files themselves were difficult to parse, and as beginners it was not feasible. We got hungry during the first project meeting, and joked, “Why not pizza?” A pizza dataset was found on kaggle, along with previous projects to compare our models to.  Pizza identification is a popular project. However, ours evolved into integrating multiple machine learning methods, such as SVM. 
 
 
-# Preprocessing & First Model
+## Figures
 
-[Link to first model python notebook](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/tree/main/first-model.ipynb)
+## Methods
 
-1. For our preprocessing, we resized all the image sizes to 512x512. We also made a new directory with the resized images. 
-2. We split the data 80-20 to get our training and testing dataset.
+### Pre-processing
 
-3. Next, we constructed a sequential neural network model with 2D Convolution Layers. 
-    - ANN info: 2 Layers of convolution. Using `tanh` and `relu` as our activation funciton, and `sigmoid` as our classification funciton.
-4. Then, we evaluated the model using a classification reprt and compared the error values from the training and testing data.
+This data set contained many images of pizzas and food items that weren’t pizzas. We then had to preprocess our data, and we decided to resize all our images to 512x512 for uniformity.
 
-### Conclusion: 
-Our model **overfitted** the training data, since the training data had an accuracy of *almost 100%*, while the testing data was barely better than a coin toss with an accuray of *56%*.
+In the beginning, we had trouble working with imaging data and we weren’t sure how to resize or use images for our classifier. We had to search online a lot, and we found the PIL library to be useful. We also were not able to load images into our jupyter notebooks initially, but after some searching we were able to utilize the OS library and we used that to access and create new modified images directories in our code.
+### Model 1 - Simple Convolution Neural Network
 
-On the fitting curve, our first model would lie as follows:
+Our first model was a simplistic approach where we trained our preprocessed data on sequential CNN and over a few convolutional layers, to which we got an overfitting model.
 
-![Fitting Curve](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/tree/main/fitting_curve.png)
+### Model 2 - SVM, CNN and Naïve Baye's Classifier
 
-## Ideas for the future
+Improving on the first model, we ran our training data through SVM(support Vector Machine) with Naive Bayes before feeding into our neural network to tackle the problem of overfitting.
 
-We plan to implement SVM (Support Vector Machine) prediction scores to our dataset, to see if that will increase accuracy. In other words, create a rough model with SVM to predict if an image is of a pizza or not, then use both the images and svm predictions into the neural net.
+### Model 3 - Final - SVM and Convolution Neutral Network
 
-# Team Members
-- Gerrik Labra
-- Kaoushik Murugan
-- Mansi Agarwal
-- Usha Sah
-- Yuwei Wang
+For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a SVM to get a partial guess that we could then feed into the neural network after the convolutional layers and flattening
+
+![Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/CNN-SVM-diagram.jpg)
+
+## Results
+
+### Model 1 - Simple Convolution Neural Network
+
+Our basic CNN model got around 99%-100% accuracy for the training set, but about 49%-51% accuracy for the testing set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
+
+### Model 2 - SVM, CNN and Naïve Baye's Classifier
+
+This model worked better than the first model with a 60% accuracy with the testing set
+
+### Model 3 - Final - SVM and Convolution Neutral Network
+
+This model worked better than the previous two with about 91% accuracy on the training set and 65%-73% accuracy on the testing set.
+
+![Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/best-SVM-CNN-model.png)
+
+## Discussion
+
+We made a pizza identifier because we wanted to gain more experience using a neural network and other machine learning methods, like an SVM. We thought this would be a fun way to implement what we learned in class into a project. When we were discussing this project, we first had to decide what kind of data we wanted to work with. We were able to find a ‘pizza and not pizza’ dataset on Kaggle, which we used in our project.
+
+For this reason, our second model was to include an SVM classification model and add it into the neural network as an attribute.  However, the SVM could not be imputed with the rest of the image, because of how keras input layers work, and convolution. If the SVM was added as a pixel, or was added as a separate dimension, then the convolution layer of the NN wouldn't work. Sidestepping the issue,  Categorical Naive Bayesian was used to aggregate the NN and SVM outputs. The rounded logistic regression output of the Neural net was imputed as attribute x1, and SVM was imputed as x2. The two model predictions are independent, since their classification methods are completely different. Therefore, the images could be classified using Naive Bayes. In essence, the second model said this,  “The prediction If Neural Net says this, and SVM says this, is it pizza?” Our model did work, but was so expensive to run, 20 images was the max to train, and 10 to test the model. This reduced confidence in the classification report.
+
+Thanks to Kaoushik, our third model input the SVM values later into the NN. It was much more computationally intensive, but worked.  The SVM had to be fitted and predicted first, then after the convolution and flattening steps was concatenated to the image data as an attribute, before logistic regression. We have seen between 65% and 72% accuracy. Overall broader impact is that we made model predictions using multiple machine learning methods, in a non-sequential, or sequential manner. We went above and beyond the requirements of the project, but also learned how to take a theory, build a conceptual data processing pipeline, then develop different species of that pipeline. 
+
+Computation Expenses Notes: We first resized to 512x512 across the images, to normalize the data using PIL library methods for our first model.  To improve runtime and memory, image element values changed from float 64 to uint 8 for the second. Computation was still expensive for our 1000 images, with  requirements going over our personal computer capabilities. We compensated by downsizing images further to 128x128x3. Color was a practical necessity to classify the images, so Grayscaling was nonviable.
+
+
+## Conclusion
+
+In the future, we plan on making our model more precise by adding more activation layers and seeing if using a Gaussian model would help with our accuracy. We plan on increasing the scope of the classifier and possibly having it classify different types of pizzas, like whether it is thin crust or a deep dish pizza. Since this kind of classification is more nuanced, it would be interesting to see what methods would be useful for this implementation and how we could further enhance our model to deal with those situations. Overall, we all were able to gain a deeper understanding of neural networks and convolution. 
+
+## Collaboration
+
+**Note**: *We are not following the format since it's difficult to distinguish between the ourselves since we all did a little bit of everything*
+
+The first team meeting was to discuss and pick the data we wanted to analyze, and for what purpose. In the second meeting we identified the attributes needed for machine learning, and analyzed our dataset. Gerrik researched and shared resources about the file format in the dataset. Kaoushik and Gerrik were the main model coders, method researchers, and debuggers. 
+
+For the preprocessing and first model deadlines, we brainstormed ideas over a group call where one person shared their coding environment, and everyone else helped the person coding through googling resources, or syntax or brainstorming ideas and suggesting codes implementations. 
+
+For the final project deadline, we each tried to implement different things since we felt it was more effective than only one person running the code on their machine. We ended up choosing the svm + convolutional NNmethod since it had a significant improvement compared to other people's methods. The final write up was also a group effort, we assigned the different sections amongst ourselves and then compiled it at the end.

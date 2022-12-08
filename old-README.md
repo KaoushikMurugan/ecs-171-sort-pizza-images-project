@@ -34,7 +34,7 @@ Our model **overfitted** the training data, since the training data had an accur
 
 On the fitting curve, our first model would lie as follows:
 
-![Fitting Curve](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/tree/main/fitting_curve.png)
+![Fitting Curve](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/fitting_curve.png)
 
 ## Ideas for the future
 

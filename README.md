@@ -7,6 +7,23 @@ We first started off with trying to identify different EEG patterns to wave brai
 
 ## Figures
 
+**Kaggle Source of our images:**
+https://www.kaggle.com/datasets/carlosrunner/pizza-not-pizza
+ 
+![Kaggle Screenshot](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/kaggle-Image.png)
+
+**SVM inspiration:**
+https://www.kaggle.com/code/ashutoshvarma/image-classification-using-svm-92-accuracy/notebook)
+
+![SVM inspo screenshot](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/SVM-inspo-image.png)
+
+An idea of what our data was and how SVM identified the data. Each pixel has 3 values, and each image is n by m pixels. We can't visually show that, but the idea is we created a hyperplane that divided the data, and based on where the data fell on that division, and the importance of the convolutions, we could determine whether the image was a pizza. 
+
+![SVM explanation Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/SVM-explanation.png)
+
+Source: https://medium.com/@skilltohire/support-vector-machines-4d28a427ebd
+
+
 ## Methods
 
 ### Pre-processing
@@ -26,23 +43,25 @@ Improving on the first model, we ran our training data through SVM(support Vecto
 
 For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a SVM to get a partial guess that we could then feed into the neural network after the convolutional layers and flattening
 
-![Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/CNN-SVM-diagram.jpg)
+![CNN SVM Diagram](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/CNN-SVM-diagram.jpg)
 
 ## Results
 
 ### Model 1 - Simple Convolution Neural Network
 
-Our basic CNN model got around 99%-100% accuracy for the training set, but about 49%-51% accuracy for the testing set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
+Our basic CNN model got around **99%-100%** accuracy for the **training** set, but about **49%-51%** accuracy for the **testing** set. This means we overfitted the training set and the model works as well as a coin flip for the testing set
 
 ### Model 2 - SVM, CNN and Naïve Baye's Classifier
 
-This model worked better than the first model with a 60% accuracy with the testing set
+This model worked better than the first model with a **60%** accuracy with the **testing** set
 
 ### Model 3 - Final - SVM and Convolution Neutral Network
 
-This model worked better than the previous two with about 91% accuracy on the training set and 65%-73% accuracy on the testing set.
+This model worked better than the previous two with about **91%** accuracy on the **training** set and **65%-73%** accuracy on the **testing** set.
 
-![Image](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/best-SVM-CNN-model.png)
+![Best accuracy results](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/best-SVM-CNN-model.png)
+
+![Model Outputs](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/example-model-output.png)
 
 ## Discussion
 

@@ -30,18 +30,19 @@ Source: https://medium.com/@skilltohire/support-vector-machines-4d28a427ebd
 
 This data set contained many images of pizzas and food items that weren’t pizzas. We then had to preprocess our data, and we decided to resize all our images to 512x512 for uniformity.
 
-In the beginning, we had trouble working with imaging data and we weren’t sure how to resize or use images for our classifier. We had to search online a lot, and we found the PIL library to be useful. We also were not able to load images into our jupyter notebooks initially, but after some searching we were able to utilize the OS library and we used that to access and create new modified images directories in our code.
+In the beginning, we had trouble working with imaging data and we weren’t sure how to resize or use images for our classifier. We had to search online a lot, and we found the **PIL library** to be useful. We also were not able to load images into our jupyter notebooks initially, but after some searching we were able to utilize the OS library and we used that to access and create new modified images directories in our code.
+
 ### [Model 1 - Simple Convolution Neural Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/34bd8bdfdaa629d078f94a834c52ebc06f09d260/first-model.ipynb)
 
-Our first model was a simplistic approach where we trained our preprocessed data on sequential CNN and over a few convolutional layers, to which we got an overfitting model.
+Our first model was a simplistic approach where we trained our preprocessed data on **sequential Convolution Neural Network** and over a few convolutional layers, to which we got **an overfitting model**.
 
 ### [Model 2 - SVM, CNN and Naïve Baye's Classifier](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/second-model.ipynb)
 
-Improving on the first model, we ran our training data through SVM(support Vector Machine) with Naive Bayes before feeding into our neural network to tackle the problem of overfitting.
+Improving on the first model, we ran our training data through **SVM(support Vector Machine) with Naive Bayes** before feeding into our **neural network** to tackle the problem of overfitting.
 
 ### [Model 3 - Final - SVM and Convolution Neutral Network](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/183848bc4727d33c6a578a81e94129c8dda9c209/svm-cnn-final.ipynb)
 
-For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a SVM to get a partial guess that we could then feed into the neural network after the convolutional layers and flattening
+For the final model, we decided to downsize the image size to 128x128 pixels to make the model more time efficient. Use used a **SVM to get a partial guess** that we could then feed into the **neural network** after the convolutional layers and flattening
 
 ![CNN SVM Diagram](https://github.com/KaoushikMurugan/ecs-171-sort-pizza-images-project/blob/main/images/CNN-SVM-diagram.jpg)
 
@@ -71,6 +72,8 @@ This model worked better than the previous two with about **91%** accuracy on th
 
 We made a pizza identifier because we wanted to gain more experience using a neural network and other machine learning methods, like an SVM. We thought this would be a fun way to implement what we learned in class into a project. When we were discussing this project, we first had to decide what kind of data we wanted to work with. We were able to find a ‘pizza and not pizza’ dataset on Kaggle, which we used in our project.
 
+The first model was about recreating the neural net from hw 3. It wasn’t until that homework was finished that we could begin testing, and everyone was on the same page.  The model successfully ran, with 70ish accuracy. The requirements of the project were met, but we got curious about integrating additional learning methods. The only method to stand out was SVM, due to the high density and dimensional complexity.
+
 For this reason, our second model was to include an SVM classification model and add it into the neural network as an attribute.  However, the SVM could not be imputed with the rest of the image, because of how keras input layers work, and convolution. If the SVM was added as a pixel, or was added as a separate dimension, then the convolution layer of the NN wouldn't work. Sidestepping the issue,  Categorical Naive Bayesian was used to aggregate the NN and SVM outputs. The rounded logistic regression output of the Neural net was imputed as attribute x1, and SVM was imputed as x2. The two model predictions are independent, since their classification methods are completely different. Therefore, the images could be classified using Naive Bayes. In essence, the second model said this,  “The prediction If Neural Net says this, and SVM says this, is it pizza?” Our model did work, but was so expensive to run, 20 images was the max to train, and 10 to test the model. This reduced confidence in the classification report.
 
 Our third model input the SVM values later into the NN. It was much more computationally intensive, but worked. The SVM had to be fitted and predicted first, then after the convolution and flattening steps was concatenated to the image data as an attribute, before logistic regression. We have seen between 65% and 72% accuracy. Overall broader impact is that we made model predictions using multiple machine learning methods, in a non-sequential, or sequential manner. We went above and beyond the requirements of the project, but also learned how to take a theory, build a conceptual data processing pipeline, then develop different species of that pipeline. 
@@ -87,7 +90,7 @@ In the future, we plan on making our model more precise by adding more activatio
 
 **Note**: *We are not following the format since it's difficult to distinguish between the ourselves since we all did a little bit of everything*
 
-The first team meeting was to discuss and pick the data we wanted to analyze, and for what purpose. In the second meeting we identified the attributes needed for machine learning, and analyzed our dataset. Gerrik researched and shared resources about the file format in the dataset. Kaoushik and Gerrik were the main model coders, method researchers, and debuggers. Usha and Mansi handled the logistical side of the project, like setting up meetings, helping with the writing, helping with the code, etc. We all equally contributed to the execution of the project and we all gave eachother feedback throughout the project. 
+The first team meeting was to discuss and pick the data we wanted to analyze, and for what purpose. In the second meeting we identified the attributes needed for machine learning, and analyzed our dataset. Gerrik researched and shared resources about the file format in the dataset. Kaoushik and Gerrik were the main model coders, method researchers, and debuggers. Usha and Mansi handled the logistical side of the project, like setting up meetings, helping with the writing, helping with the code, etc. We all equally contributed to the execution os the project and we all gave eachpther feedback throughout the project. 
 
 For the preprocessing and first model deadlines, we brainstormed ideas over a group call where one person shared their coding environment, and everyone else helped the person coding through googling resources, or syntax or brainstorming ideas and suggesting codes implementations. 
 
